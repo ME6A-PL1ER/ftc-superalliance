@@ -61,8 +61,4 @@ ftc-superalliance
    npm start
    ```
 
-## Contributing
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
-
-## License
-This project is licensed under the MIT License.
+I 100% did not make this readme nor did I do much of the base code structure (github copilot carried me because I have no clue how to actually do this type of coding yet)
