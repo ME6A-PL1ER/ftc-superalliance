@@ -10,11 +10,11 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
-    "concurrently": "^6.0.0"
+    "concurrently": "^9.1.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.0"
+    "nodemon": "^3.1.9"
   },
-  "author": "Your Name",
+  "author": "Owen Rossing",
   "license": "MIT"
 }
