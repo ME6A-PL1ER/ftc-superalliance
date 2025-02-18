@@ -1,6 +1,6 @@
 import express from 'express';
 import passport from 'passport';
-import { GoogleStrategy } from 'passport-google-oauth20';
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 
 const router = express.Router();
 
@@ -9,9 +9,9 @@ passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: '/auth/google/callback'
-}, (accessToken, refreshToken, profile, done) => {
-    // Here you would typically find or create a user in your database
-    return done(null, profile);
+}, (accessToken: string, refreshToken: string, profile: any, done: Function) => {
+    // Your logic here
+    done(null, profile as any);
 }));
 
 // Serialize user
@@ -37,9 +37,11 @@ router.get('/google/callback',
     }
 );
 
-router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+router.get('/logout', (req, res, next) => {
+    req.logout((err: any) => {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
 });
 
 router.get('/current_user', (req, res) => {

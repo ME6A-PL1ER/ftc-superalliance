@@ -48,6 +48,7 @@ ftc-superalliance
    cd ../server
    npm install
    ```
+4. More commands
 
 ## Usage
 1. Start the server:
